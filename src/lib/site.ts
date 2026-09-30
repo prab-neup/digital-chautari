@@ -5,8 +5,9 @@ import type { Metadata } from "next";
  * The production domain is a placeholder until one is registered - override
  * it with NEXT_PUBLIC_SITE_URL at build time.
  */
-export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://digitalchautari.com";
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://digitalchautari.com"
+).replace(/\/+$/, "");
 
 export const siteName = "Digital Chautari";
 
