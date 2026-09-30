@@ -1,0 +1,27 @@
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.light {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  /* The type scale specifies uppercase (or small-caps) for every eyebrow /
+     tag label, not just the gold dark-section variant. */
+  text-transform: uppercase;
+}
+
+.gold {
+  background: rgba(224, 169, 48, 0.12);
+  border: 1px solid rgba(224, 169, 48, 0.3);
+  color: var(--gold);
+  text-transform: uppercase;
+}

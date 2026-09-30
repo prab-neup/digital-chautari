@@ -1,0 +1,239 @@
+/* About page section styles. */
+
+.split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px var(--grid-gap);
+  align-items: start;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.smallBody {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.bodyOnNavy {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+/* --- 2. Alternating stat tiles ----------------------------------------- */
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  min-height: 132px;
+  padding: 22px;
+  border-radius: var(--radius-card);
+  border: 1px solid transparent;
+  transition: transform var(--dur-hover) var(--ease),
+    box-shadow var(--dur-hover) var(--ease);
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.tileValue {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.tileLabel {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  opacity: 0.78;
+}
+
+.teal {
+  background: var(--teal);
+  color: #fff;
+}
+
+.navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.white {
+  background: #fff;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* --- 3. Mission & vision ------------------------------------------------ */
+
+.mvCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  height: 100%;
+  padding: 28px;
+}
+
+.mvTitle {
+  font-size: 20px;
+}
+
+/* --- 4 & 5. Values and commitments -------------------------------------- */
+
+.valueCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  height: 100%;
+}
+
+/* --- 6. Team ------------------------------------------------------------ */
+
+.teamCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  height: 100%;
+}
+
+.teamCard h3 {
+  margin-bottom: 5px;
+}
+
+/* --- 7. Roadmap timeline ------------------------------------------------ */
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding-top: 8px;
+}
+
+/* Centred vertical spine. */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: var(--navy-border);
+}
+
+.milestone {
+  position: relative;
+  width: 50%;
+  padding-right: 42px;
+}
+
+.right {
+  margin-left: 50%;
+  padding-right: 0;
+  padding-left: 42px;
+}
+
+.dot {
+  position: absolute;
+  top: 26px;
+  right: -7px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--leaf);
+  border: 3px solid var(--navy);
+  box-shadow: 0 0 0 3px rgba(127, 174, 58, 0.22);
+}
+
+.right .dot {
+  right: auto;
+  left: -7px;
+}
+
+.milestoneCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 22px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--navy-border);
+  background: var(--navy-card);
+  transition: transform var(--dur-hover) var(--ease),
+    border-color var(--dur-hover) var(--ease),
+    box-shadow var(--dur-hover) var(--ease);
+}
+
+.milestoneCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(224, 169, 48, 0.4);
+  box-shadow: 0 16px 30px -18px rgba(0, 0, 0, 0.6);
+}
+
+.yearPill {
+  padding: 5px 13px;
+  border-radius: var(--radius-badge);
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 980px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  /* Timeline collapses to a single left-hand spine. */
+  .timeline::before {
+    left: 7px;
+    margin-left: 0;
+  }
+
+  .milestone,
+  .right {
+    width: 100%;
+    margin-left: 0;
+    padding-left: 34px;
+    padding-right: 0;
+  }
+
+  .dot,
+  .right .dot {
+    left: 0;
+    right: auto;
+  }
+}

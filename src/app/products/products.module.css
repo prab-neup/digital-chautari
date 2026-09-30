@@ -1,0 +1,27 @@
+.spotlight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.spotlightTitle {
+  max-width: 720px;
+  color: #fff;
+}
+
+.spotlightBody {
+  max-width: 660px;
+  font-size: var(--fs-lede);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.spotlightActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}

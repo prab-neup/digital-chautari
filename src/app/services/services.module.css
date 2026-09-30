@@ -1,0 +1,231 @@
+/* Services page section styles. */
+
+/* --- 2. Service category rows ------------------------------------------ */
+
+.row {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px var(--grid-gap);
+  align-items: start;
+  padding-block: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.row:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.row:last-child {
+  padding-bottom: 0;
+}
+
+.rowIntro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  position: sticky;
+  top: 96px;
+}
+
+.rowBody {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 420px;
+}
+
+.subCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.subBody {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* --- 3. Pricing --------------------------------------------------------- */
+
+.pricingGrid {
+  align-items: stretch;
+}
+
+.tierWrap {
+  height: 100%;
+}
+
+.tier {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+  padding: 26px 22px;
+}
+
+.tierFeatured {
+  border-color: var(--gold);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 22px;
+  padding: 6px 13px;
+  border-radius: var(--radius-badge);
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.tierName {
+  font-size: 16px;
+  color: inherit;
+}
+
+.tierFeatured .tierName {
+  color: #fff;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.price {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.tierFeatured .price {
+  color: var(--gold);
+}
+
+.period {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.tierFeatured .period {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.tierBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.tierFeatured .tierBody {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-block: 10px 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.tierFeatured .features {
+  border-top-color: var(--navy-border);
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.tierFeatured .feature {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.tick {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background: var(--chip-mint);
+  color: var(--teal-dark);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tierFeatured .tick {
+  background: rgba(224, 169, 48, 0.18);
+  color: var(--gold);
+}
+
+.tierCta {
+  margin-top: auto;
+  width: 100%;
+}
+
+/* --- 4. Industries ------------------------------------------------------ */
+
+.industryCard {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* --- 5. Why work with us ------------------------------------------------ */
+
+.whyCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  height: 100%;
+}
+
+.whyTick {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(127, 174, 58, 0.18);
+  color: var(--leaf);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.whyBody {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+@media (max-width: 980px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .rowIntro {
+    position: static;
+  }
+}

@@ -1,49 +1,193 @@
+/* ==========================================================================
+   Digital Chautari — design tokens
+   Every value here is transcribed from the brand spec. Components should
+   reference these variables rather than re-declaring literals.
+   ========================================================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --- Palette -------------------------------------------------------- */
+  --teal: #0f9488;
+  --teal-dark: #0b6f66;
+  --gold: #e0a930;
+  --leaf: #7fae3a;
+  --ink: #101826;
+  --navy: #0b1220;
+  --navy-card: #101d2b;
+  --navy-border: #223140;
+  --paper: #fbfbf9;
+  --line: #e7e5df;
+  --muted: #5b6472;
+
+  /* Pastel icon-chip backgrounds, rotated across repeating card grids */
+  --chip-mint: #e7f5ea;
+  --chip-teal: #e7f2f4;
+  --chip-gold: #fdf1de;
+  --chip-lilac: #f4e9f6;
+  --chip-pink: #fdeef0;
+
+  /* Headline gradient, clipped to text */
+  --gradient-headline: linear-gradient(90deg, #0f9488, #e0a930, #7fae3a);
+
+  /* --- Typography ----------------------------------------------------- */
+  --font-heading: var(--font-sora), "Sora", system-ui, sans-serif;
+  --font-body: var(--font-inter), "Inter", system-ui, sans-serif;
+
+  --fs-h1: 46px;
+  --fs-h2: 30px;
+  --fs-h3: 17px;
+  --fs-body: 16px;
+  --fs-lede: 17px;
+  --fs-small: 13px;
+  --fs-button: 15px;
+  --fs-eyebrow: 12px;
+
+  /* --- Layout --------------------------------------------------------- */
+  --max-width: 1120px;
+  --gutter: 40px;
+
+  --section-y: 64px;        /* standard section rhythm */
+  --section-y-tight: 48px;  /* tight sections */
+  --hero-top: 84px;
+  --hero-bottom: 48px;
+
+  --grid-gap: 20px;
+
+  /* --- Radii ---------------------------------------------------------- */
+  --radius-chip: 10px;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+  --radius-badge: 16px;
+  --radius-button: 8px;
+
+  /* --- Elevation ------------------------------------------------------ */
+  --shadow-hover: 0 16px 30px -18px rgba(16, 24, 38, 0.2);
+
+  /* --- Motion --------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-page: 0.45s;
+  --dur-hover: 0.2s;
+  --stagger: 70ms;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (max-width: 760px) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gutter: 22px;
+    --fs-h1: 32px;
+    --fs-h2: 26px;
   }
 }
 
-html {
-  height: 100%;
-}
+/* --------------------------------------------------------------------------
+   Reset / base
+   -------------------------------------------------------------------------- */
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.18;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  font-weight: 800;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+}
+
+p {
   margin: 0;
 }
 
 a {
-  color: inherit;
+  color: var(--teal);
   text-decoration: none;
+  transition: color var(--dur-hover) var(--ease);
 }
 
-@media (prefers-color-scheme: dark) {
+a:hover {
+  color: var(--teal-dark);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Motion preferences — every animated primitive checks this.
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
   html {
-    color-scheme: dark;
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
   }
 }

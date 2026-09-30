@@ -1,0 +1,67 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--hero-top) var(--hero-bottom);
+  background: linear-gradient(180deg, #eef7f1 0%, var(--paper) 72%);
+}
+
+/* Subtle radial teal/gold glow anchored to the top-right corner. */
+.glow {
+  position: absolute;
+  top: -220px;
+  right: -180px;
+  width: 620px;
+  height: 620px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 35% 35%,
+      rgba(15, 148, 136, 0.18),
+      transparent 62%
+    ),
+    radial-gradient(circle at 70% 60%, rgba(224, 169, 48, 0.16), transparent 60%);
+  filter: blur(6px);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.left {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.title {
+  max-width: 720px;
+}
+
+.lede {
+  max-width: 660px;
+  font-size: var(--fs-lede);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.center .actions {
+  justify-content: center;
+}
+
+.extra {
+  position: relative;
+  margin-top: 44px;
+}

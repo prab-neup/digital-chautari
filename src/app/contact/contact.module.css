@@ -1,0 +1,178 @@
+/* Contact page section styles. */
+
+.smallBody {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+/* --- 2. Info cards ------------------------------------------------------ */
+
+.infoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 11px;
+  height: 100%;
+}
+
+.infoLine {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* --- 3. Departments ----------------------------------------------------- */
+
+.deptCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  height: 100%;
+}
+
+.deptEmail {
+  margin-top: auto;
+  padding-top: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* --- 4. Form + aside ---------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: var(--grid-gap);
+  align-items: start;
+}
+
+.formCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px;
+}
+
+.formTitle {
+  font-size: 22px;
+}
+
+.formCard :global(form) {
+  margin-top: 14px;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--grid-gap);
+}
+
+.mapCard {
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Map placeholder - a tinted grid standing in for an embed. */
+.map {
+  position: relative;
+  height: 190px;
+  display: grid;
+  place-items: center;
+  background-color: var(--chip-teal);
+  background-image: linear-gradient(rgba(15, 148, 136, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 148, 136, 0.09) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.pin {
+  font-size: 30px;
+  filter: drop-shadow(0 6px 10px rgba(16, 24, 38, 0.2));
+}
+
+.mapMeta {
+  padding: 18px 22px 22px;
+}
+
+.mapMeta h3 {
+  margin-bottom: 4px;
+}
+
+/* Dark FAQ callout. */
+.faqCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 24px 22px;
+  border-radius: var(--radius-card);
+  background: var(--navy);
+  border: 1px solid var(--navy-border);
+}
+
+.faqTitle {
+  color: #fff;
+}
+
+.faqBody {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.faqLink {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+.faqLink:hover {
+  color: #f0c465;
+}
+
+.responseCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.responseList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.responseRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.responseRow:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.responseValue {
+  flex: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--teal-dark);
+}
+
+@media (max-width: 980px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .formCard {
+    padding: 22px;
+  }
+}

@@ -1,0 +1,42 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.item {
+  text-align: center;
+  padding: 8px;
+}
+
+.icon {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.value {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.label {
+  margin-top: 6px;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px var(--grid-gap);
+  }
+
+  .value {
+    font-size: 28px;
+  }
+}

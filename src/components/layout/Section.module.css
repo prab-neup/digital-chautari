@@ -1,0 +1,25 @@
+.section {
+  position: relative;
+}
+
+.standard {
+  padding-block: var(--section-y);
+}
+
+.tight {
+  padding-block: var(--section-y-tight);
+}
+
+.none {
+  padding-block: 0;
+}
+
+.navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.navy :global(h2),
+.navy :global(h3) {
+  color: #fff;
+}

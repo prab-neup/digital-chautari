@@ -1,0 +1,67 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--radius-button);
+  border: 1px solid transparent;
+  font-family: var(--font-body);
+  font-size: var(--fs-button);
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--dur-hover) var(--ease),
+    border-color var(--dur-hover) var(--ease),
+    color var(--dur-hover) var(--ease),
+    transform var(--dur-hover) var(--ease);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  background: var(--teal);
+  color: #fff;
+}
+
+.primary:hover {
+  background: var(--teal-dark);
+  color: #fff;
+}
+
+.ghost {
+  background: #fff;
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.ghost:hover {
+  border-color: var(--teal);
+  color: var(--teal-dark);
+}
+
+/* Outlined button sitting on a navy section. */
+.onNavy {
+  background: transparent;
+  border-color: var(--navy-border);
+  color: #fff;
+}
+
+.onNavy:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* White button sitting on the teal-to-blue closing CTA panel. */
+.onGradient {
+  background: #fff;
+  color: var(--teal-dark);
+}
+
+.onGradient:hover {
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--teal-dark);
+}

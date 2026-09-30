@@ -1,0 +1,37 @@
+.card {
+  padding: 22px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--line);
+  transition: transform var(--dur-hover) var(--ease),
+    box-shadow var(--dur-hover) var(--ease),
+    border-color var(--dur-hover) var(--ease);
+}
+
+.light {
+  background: #fff;
+}
+
+.navy {
+  background: var(--navy-card);
+  border-color: var(--navy-border);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.interactive:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.light.interactive:hover {
+  border-color: rgba(15, 148, 136, 0.35);
+}
+
+.navy.interactive:hover {
+  border-color: rgba(224, 169, 48, 0.4);
+  box-shadow: 0 16px 30px -18px rgba(0, 0, 0, 0.6);
+}
+
+/* Icon chips grow slightly when their parent card is hovered. */
+.interactive:hover :global(.chipScale) {
+  transform: scale(1.08);
+}

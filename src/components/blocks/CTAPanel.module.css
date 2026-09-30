@@ -1,0 +1,40 @@
+.section {
+  padding-block: var(--section-y);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 56px 40px;
+  border-radius: 20px;
+  background: linear-gradient(120deg, var(--teal) 0%, #0d6ea8 100%);
+  color: #fff;
+}
+
+.title {
+  max-width: 700px;
+  color: #fff;
+}
+
+.lede {
+  max-width: 620px;
+  font-size: var(--fs-lede);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+@media (max-width: 760px) {
+  .panel {
+    padding: 40px 22px;
+  }
+}
